@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> 
+    <style>
+        body {
+          background:black;
+          font-family: 'Ubuntu', sans-serif;
+        }
+        .container {
+          margin-top: 15px;
+        }
+        ul li {
+          list-style-type: none;
+          text-align: left;
+          margin-bottom: 1px;
+          margin-top: 3px;
+        }
+        span {
+          margin-left: 8px;
+        }
+        .npm {
+          color: lightgray;
+          background-color: darkslategray;
+        }
+        .err {
+          color: red;
+          background-color: darkslategray;
+        }
+        .status {
+          color: purple;
+        }
+        .message {
+          color: #aaa;
+        }
+
+        .user {
+          color: lime;
+        }
+
+        .blinking-cursor { 
+          position: relative;
+          line-height: 20px;
+          font-size: 24px;
+          color: white;
+          min-width: 360px;
+        }
+
+        .blinking-cursor::after {
+          content: "";
+          top: 0;
+          display: inline-block;
+          background-color: #606060;
+          vertical-align: top;
+          width: 12px;
+          height: 20px;
+          -webkit-animation: blink 1s step-end infinite;
+          animation: blink 1s step-end infinite;
+        }
+
+        @-webkit-keyframes blink {
+          0% { opacity: 1.0; }
+          50% { opacity: 0.0; }
+          100% { opacity: 1.0; }
+        }
+
+        @keyframes blink {
+          0% { opacity: 1.0; }
+          50% { opacity: 0.0; }
+          100% { opacity: 1.0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-2">
+      <ul>
+          <li><span class="npm">npm</span> <span class="err">ERR!</span> <span class="status">code</span><span class="message">E404</span></li>
+          <li><span class="npm">npm</span> <span class="err">ERR!</span> <span class="status">404</span> <span class="message" id="location"></span></li>
+          <li><span class="npm">npm</span> <span class="err">ERR!</span> <span class="status">404</span></li>
+          <li><span class="npm">npm</span> <span class="err">ERR!</span> <span class="status">404</span> <span class="message" id="path"></span></li>
+          <li><span class="npm">npm</span> <span class="err">ERR!</span> <span class="status">404</span> <span class="message">You should bug the author to publish it.</span></li>
+          <li><span class="npm">npm</span> <span class="err">ERR!</span> <span class="status">404</span></li>
+          <li><span class="user">user@jstoday: ~</span> <span class="message">Return to <a href="/">JavaScript Today</a></span><span class="blinking-cursor"></span></li>
+      </ul>
+    </div>
+    <script>
+        const url = window.location.href;
+        const pathUrl = window.location.pathname;
+        document.getElementById('location').innerHTML = `Not Found - GET ${url} - Not Found`;
+        document.getElementById('path').innerHTML = `'${pathUrl}' doesn't exist on this site.`;
+    </script>
+</body>
+</html>
